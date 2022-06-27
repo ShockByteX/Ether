@@ -2,7 +2,7 @@
 
 namespace Ether.Marshaling;
 
-public static class MarshalType
+internal static class MarshalType
 {
     public static byte[] Convert(object value)
     {

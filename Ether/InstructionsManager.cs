@@ -18,6 +18,8 @@ internal sealed class InstructionsManager : IDisposable
         _data = data;
     }
 
+    public int Size => _instructions.Sum(x => x.Size);
+
     public void Add(string mnemonic)
     {
         var offset = AcquireOffset();

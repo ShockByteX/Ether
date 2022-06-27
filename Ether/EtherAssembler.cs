@@ -26,6 +26,8 @@ public static class EtherAssembler
             instructions.Add(mnemonic);
         }
 
+        data.Offset = instructions.Size;
+
         var instructionsAssembly = instructions.GetAssembly();
         var dataAssembly = data.GetData();
 

@@ -2,7 +2,7 @@
 
 Add some additional auto assemble functionality such as adding jump marks and defining data types.
 
-# Example asm
+## Example asm
 
 ```
 float someValue 20000
@@ -22,3 +22,6 @@ float someValue 20000
 	movss [rcx+0x000002C4],xmm2
 	jmp return
 ```
+
+## Usage
+> var data = EtherAssembler.Assemble(mnemonics, returnOffset)

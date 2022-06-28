@@ -4,7 +4,7 @@ public static class EtherAssembler
 {
     private const string ReturnMarkName = "return";
 
-    public static byte[] Assemble(IReadOnlyCollection<string> mnemonics, int returnOffset)
+    public static IEtherResult Assemble(IReadOnlyCollection<string> mnemonics, int returnOffset)
     {
         mnemonics = mnemonics.Select(x => x.Trim()).ToArray();
 
@@ -30,7 +30,8 @@ public static class EtherAssembler
 
         var instructionsAssembly = instructions.GetAssembly();
         var dataAssembly = data.GetData();
+        var assembly = instructionsAssembly.Concat(dataAssembly).ToArray();
 
-        return instructionsAssembly.Concat(dataAssembly).ToArray();
+        return new EtherResult(assembly, marks.GetMarks());
     }
 }

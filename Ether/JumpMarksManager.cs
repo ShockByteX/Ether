@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Collections.ObjectModel;
+using System.Text.RegularExpressions;
 
 namespace Ether;
 
@@ -9,6 +10,8 @@ internal sealed class JumpMarksManager
     private readonly Dictionary<string, int> _marks = new();
 
     public int this[string name] { get => _marks[name]; set => _marks[name] = value; }
+
+    public IReadOnlyDictionary<string, int> GetMarks() => new ReadOnlyDictionary<string, int>(_marks);
 
     public void Initialize(IReadOnlyCollection<string> mnemonics)
     {

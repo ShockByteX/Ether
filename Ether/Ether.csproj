@@ -11,4 +11,8 @@
     <PackageReference Include="Reloaded.Assembler" Version="1.0.14" />
   </ItemGroup>
 
+  <ItemGroup>
+    <NativeLibs Remove="EtherResult.cs" />
+  </ItemGroup>
+
 </Project>

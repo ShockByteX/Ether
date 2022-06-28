@@ -11,7 +11,7 @@ internal sealed class DataInstruction : Instruction
 
     public override byte[] Assemble()
     {
-        var offset = _dataObject.AbsoluteOffset - Offset;
+        var offset = _dataObject.AbsoluteOffset - (Offset + Size);
         return Assembly[..^4].Concat(BitConverter.GetBytes(offset)).ToArray();
     }
 }
